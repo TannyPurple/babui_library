@@ -1,0 +1,51 @@
+{% extends "base_generic.html" %}
+{% block title %}
+
+<title>নিবন্ধন</title>
+
+{% endblock %}
+
+{% block content %}
+
+<h1>নিবন্ধন করুন: </h1>
+<hr>
+<h5> সাইনইন এর জন্যে আইডি ও পাসওয়ার্ড জমা দিন </h5>
+<br>
+<!--  instruction if data has error -->
+{% if form.errors %}
+<h6 class="text-danger"><strong>আপনার আইডি / পাসওয়ার্ড ভুল। আবার চেষ্টা করুন।</strong></h6>
+{% endif %}
+
+
+<!--  instruction for riderected use -->
+{% if next %}
+{% if user.is_authenticated %}
+<p>এই একাউন্টে আপনার কাংখিত  ওয়েবপাতা দেখার অনুমতি নেই। অনুমতি আছে এমন একাউন্ট থেকে লগইন করুন</p>
+{% else %}
+<p>আপনার কাংখিত ওয়েবপাতাটি দেখতে লগইন করুন</p>
+{% endif %}
+{% endif %}
+
+<!--  Actual form -->
+
+<form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    <table>
+        <tr>
+          <td>{{form.username.label_tag}}</td>
+          <td>{{form.username}}</td>  
+        </tr>
+
+        <tr>
+            <td>{{form.password.label_tag}}</td>
+            <td>{{form.password}}</td>  
+          </tr>
+    </table>
+    <br>
+    <input type="submit" value="জমা দিন">
+    <input type="hidden" name="next" value="{{next}}">
+</form>
+<br>
+
+<p>পাসওয়ার্ড ভুলে গেছেন? <a href="">এখানে ক্লিক করুন</a></p>
+{% endblock %}

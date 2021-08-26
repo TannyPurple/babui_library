@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %} 
+
+{% block content %}
+
+<h1 id="title">বাবুই পাঠাগার</h1>
+<p>বাবুই পাঠাগারে আপনাদের স্বাগত</p>
+<h2>এক নজরে পাঠাগারের অবস্থা</h2>
+<ul>
+    <li><strong>No of Books: </strong> {{num_books}}</li>
+    <li><strong>No of Authors: </strong> {{num_authors}}</li>
+    <li><strong>No of Copies: </strong> {{num_copies}}</li>
+    <li><strong>No of Available copies: </strong> {{num_copies_available}}</li>
+</ul>
+
+<p>আপনি এই পাতায় {{num_visits}} বার এসেছেন</p>
+
+
+{% endblock %}

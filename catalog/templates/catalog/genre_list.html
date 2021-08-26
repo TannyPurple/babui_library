@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+
+<title>জনরা</title>
+
+{% endblock %}
+
+{% block content %}
+<h1 id="gtitle">যেসব জনরার বই পাবেন</h1>
+<hr>
+{% for genre in genres %}
+
+<ul>
+<li><a href="{{genre.get_absolute_url}}">{{genre}}</a></li>
+</ul>
+
+{% empty %}
+    <p>দেখানোর মত কোনো জনরা পেলাম না</p>
+{% endfor %}
+
+{% endblock %}

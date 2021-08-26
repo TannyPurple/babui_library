@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+{% block title %}
+
+<title>{{book}}</title>
+
+{% endblock %}
+
+{% block content %}
+<h1 id="bname"><strong>{{book}}</strong></h1>
+<hr id="ts">
+ <ul>
+     <li><strong>কোন বই ?  </strong> {{book}}</li>
+     <li><strong>কে লিখেছেন ?  </strong> {{book.author}}</li>
+     <li><strong>কোন জনরা ?  </strong> {{book.genre.all|join:", "}}</li>
+     <li><strong>আইডি নং ?  </strong> {{book.isbn}}</li>
+
+ </ul>
+<br>
+<h5>বইটা নিয়ে দুইটা কথা</h5>
+<p>====================================</p>
+
+<p>{{book.summary}}</p>
+
+
+{% endblock %}
+

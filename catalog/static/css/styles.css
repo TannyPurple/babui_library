@@ -1,0 +1,68 @@
+#sidebar{
+    background-color: rgb(1, 33, 61);
+    color: white;
+    min-height: 60vh;
+    list-style: none;
+    
+}
+
+.sidebarnav{
+    list-style: none;  
+    margin-top: 25px;
+    padding: 0; 
+    font-size: 15px; 
+}
+
+#content{
+    background-color: rgb(147, 203, 251);
+    min-height: 60vh;
+}
+
+#title{
+    margin-top: 25px;
+}
+
+#bname{
+    margin-top: 25px;
+}
+
+#ts{
+    margin-top:0;
+    padding-bottom: 0; 
+}
+
+h5{
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#abookh{
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#aud{margin-bottom: 0;
+    padding-bottom: 0;
+}
+#ud{
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#gtitle{
+    margin-top: 25px;
+}
+
+#atitle{
+    margin-top: 25px;
+}
+
+#btitle{
+    margin-top: 25px;
+}
+
+
+
+

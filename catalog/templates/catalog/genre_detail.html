@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+{% block title %}
+
+<title>{{genre}}</title>
+
+{% endblock %}
+
+{% block content %}
+
+<h1>{{genre}}</h1>
+<hr>
+<h5>এই জনরার যেসব বই পড়তে পারেনঃ </h5>
+<br>
+{% for book in genre.book_set.all %}
+<ul>
+    <li><a href="{{book.get_absolute_url}}">{{book}} </a> ( {{book.author}} ) </li>
+</ul>
+{% empty %}
+<p>দেখানোর মত কোন বই পেলাম না</p>
+{% endfor %}
+{% endblock %}

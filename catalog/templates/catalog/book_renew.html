@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block title %} <title>Renew Book</title> {% endblock %}
+{% block content %}
+
+<h1>বই জমা দেয়ার তারিখ বর্ধিত করুন</h1>
+<hr>
+
+<form action="" method="POST">
+{% csrf_token %}
+
+<table>
+    {{form.as_table}}
+</table>
+<br>
+<input type="submit" value="জমা দিন">
+
+</form>
+
+{% endblock %}

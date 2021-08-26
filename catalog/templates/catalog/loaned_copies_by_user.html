@@ -1,0 +1,46 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+
+<title>আমার বইগুলো</title>
+
+{% endblock %}
+
+
+{% block content %}
+
+<h1>আমার বইএর তালিকাঃ</h1> 
+<hr>
+<h4>সদস্যের নামঃ {{user.get_username}}</h4>
+
+{% for copy in copies %}
+<h5><strong>{{copy.book}}</strong></h5>
+<ul>
+    <li> আইডি  {{copy.id}}</li>
+    <li class="{% if copy.is_overdue %} text-danger {% endif %}"> জমা দেবার তারিখ  {{copy.due_back}}</li>
+</ul>
+<hr>
+{% empty %}
+
+<p>দেখানোর মত কোনো বই পেলেম না।</p>
+
+{% endfor %}
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

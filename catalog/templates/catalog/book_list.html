@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+{% block title %}
+
+<title>বইসমূহ</title>
+
+{% endblock %}
+
+{% block content %}
+<h1 id="btitle">যে বইগুলো পাবেন</h1>
+<hr>
+{% for book in books %}
+<ul>
+    <li><a href="{{book.get_absolute_url}}">{{book}}</a> ( {{book.author}} ) </li>
+</ul>
+
+{% empty %}
+<p>দেখানোর মত কোনো বই পেলাম না</p>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+<title>ধারের সব বই</title>
+{% endblock %}
+
+{% block content %}
+
+<h1>লোনে আছে সমস্ত বইয়ের তালিকাঃ</h1> 
+<hr>
+
+{% for copy in copies %}
+
+<h4>{{copy.book}}</h4>
+<ul>
+    <li><strong>সদস্যের নামঃ </strong>{{copy.borrower}}</li>
+    <li><strong>আইডি: </strong>{{copy.id}}</li>
+    <li><strong>আইএসবিএনঃ </strong>{{copy.book.isbn}}</li>
+    <li><strong>জমা দেয়ার তারিখঃ </strong>{{copy.due_back}}</li>
+    <li><strong>মুদ্রনঃ </strong>{{copy.imprint}}</li>
+    <li><strong>মেয়াদঃ </strong>{% if copy.is_overdue %} ওভারডিউ {% endif %}</li>
+    
+
+</ul>
+{% empty %}
+
+<p>দেখানোর মত কোনো বই পেলাম না।</p>
+
+{% endfor %}
+
+
+
+
+
+
+
+{% endblock %}

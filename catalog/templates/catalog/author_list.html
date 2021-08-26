@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %}
+{% block title %}
+
+<title>লেখক</title>
+
+{% endblock %}
+
+{% block content %}
+
+<h1 id="atitle">যাদের লেখা বই পড়তে পারবেন</h1>
+<hr>
+
+{% for author in authors %}
+<ul>
+    <li><a href="{{author.get_absolute_url}}">{{author}}</a> ( {{author.birth_date}} - {{author.death_date}} ) </li>
+</ul>
+
+{% empty %}
+<p>দেখানোর মত কোনো লেখক পেলাম না</p>
+{% endfor %}
+
+
+
+
+{% endblock %}

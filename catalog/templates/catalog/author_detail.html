@@ -1,0 +1,33 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+<title>{{author}}</title>
+{% endblock %}
+
+{% block content %}
+<h1>{{author}}</h1>
+<hr>
+
+<ul>
+    <li><strong>লেখকের নামঃ </strong>{{author}}</li>
+    <li><strong>জন্ম তারিখঃ </strong>{{author.birth_date}}</li>
+    <li><strong>মৃত্যু তারিখঃ</strong>{{author.death_date}}</li>
+</ul>
+<br>
+<h3 id="aud">লেখক পরিচিতিঃ </h3>
+
+<p>{{author.profile}}</p>
+
+<h3>লেখকের যেসব বই এখানে পাবেনঃ</h3>
+
+{% for book in author.book_set.all %}
+
+<ul>
+    <li><a href="{{book.get_absolute_url}}">{{book.title}}</a></li>
+</ul>
+
+
+{% empty %}
+<p>দেখানোর মত কোনো বই পেলেম না </p>
+{% endfor %}
+{% endblock %}
